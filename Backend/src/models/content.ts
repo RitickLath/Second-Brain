@@ -5,7 +5,7 @@ interface IContent extends Document {
   link?: string;
   title: string;
   description?: String;
-  tags: mongoose.Types.ObjectId[];
+  tags: string[];
   createdAt: Date;
   updatedAt: Date;
 }
@@ -25,8 +25,7 @@ const contentSchema = new Schema<IContent>(
     },
     tags: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Tag",
+        type: String,
       },
     ],
   },

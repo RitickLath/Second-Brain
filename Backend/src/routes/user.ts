@@ -10,7 +10,7 @@ import { auth } from "../middleware/auth";
 const UserRouter = express.Router();
 
 UserRouter.get("/", auth, (req, res) => {
-  res.json({ mes: "hhe" });
+  res.json({ message: "Just for testing" });
 });
 
 UserRouter.post("/signin", signin);
