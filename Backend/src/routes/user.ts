@@ -6,16 +6,21 @@ import {
   signin,
   signup,
 } from "../controllers/user";
+import { auth } from "../middleware/auth";
 const UserRouter = express.Router();
+
+UserRouter.get("/", auth, (req, res) => {
+  res.json({ mes: "hhe" });
+});
 
 UserRouter.post("/signin", signin);
 
 UserRouter.post("/signup", signup);
 
-UserRouter.post("/content", contentPost);
+UserRouter.post("/content", auth, contentPost);
 
-UserRouter.get("/content", contentGet);
+UserRouter.get("/content", auth, contentGet);
 
-UserRouter.post("/share", share);
+UserRouter.post("/share", auth, share);
 
 export default UserRouter;

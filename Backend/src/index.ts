@@ -7,7 +7,7 @@ import DatabaseConnect from "./config/db.js";
 const app = express();
 app.use(express.json());
 
-app.use("/ap1/v1/", UserRouter);
+app.use("/api/v1", UserRouter);
 
 const Server = async () => {
   try {
