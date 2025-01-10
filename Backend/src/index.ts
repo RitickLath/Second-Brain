@@ -1,7 +1,7 @@
 import express from "express";
 import UserRouter from "./routes/user";
 import "dotenv/config";
-// @ts-ignore
+
 import DatabaseConnect from "./config/db.js";
 
 const app = express();
